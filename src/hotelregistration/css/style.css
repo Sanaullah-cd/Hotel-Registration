@@ -1,0 +1,16 @@
+.dashboard{
+    -fx-background-color: #f8f8f8;
+}
+.sidebar{
+    -fx-background-color: #fff;
+}
+.side_labels{
+    -fx-font-size: 24px;
+}
+.label_bg{
+    -fx-background-color: #E8F0FF;
+    -fx-background-radius: 10px;
+    -fx-border-color: #7EA9FD;
+    -fx-border-radius: 10px;
+    
+}
