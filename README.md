@@ -14,6 +14,6 @@ For run project, follow the bellow steps:
 
 5- Run project and see aweasome ui with practical OOP lesssons.
 
-Thank you reading.
+Thank you.
 
 # Powered by: Sanaullah
