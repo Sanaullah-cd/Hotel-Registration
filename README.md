@@ -1,5 +1,6 @@
 # Hotel Registration Run Guid
-Hotel Registration Project is Milestore project created by Java & JavaFX UI
+
+Hotel Registration Project is a Milestone project developed by Java & JavaFX UI
 
 For run project, follow the bellow steps:
 
@@ -13,4 +14,6 @@ For run project, follow the bellow steps:
 
 5- Run project and see aweasome ui with practical OOP lesssons.
 
-- Thank you reading.
+Thank you reading.
+
+# Powered by: Sanaullah
