@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="1615.0" styleClass="dashboard" stylesheets="@css/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="hotelregistration.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="1615.0" styleClass="dashboard" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelregistration.FXMLDocumentController">
    <children>
-      <BorderPane prefHeight="929.0" prefWidth="1615.0">
+      <BorderPane prefHeight="929.0" prefWidth="1615.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <AnchorPane prefHeight="929.0" prefWidth="306.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="18.0" layoutY="187.0" prefHeight="69.0" prefWidth="271.0" styleClass="label_bg">
+                  <Pane fx:id="btnDashboard" layoutX="19.0" layoutY="262.0" prefHeight="69.0" prefWidth="271.0" styleClass="label_bg">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -22,10 +30,289 @@
                         </ImageView>
                         <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="Dashboard" />
                      </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
+                  <Pane fx:id="btnReserve" layoutX="19.0" layoutY="342.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_reserve_1%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="Reservation" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane fx:id="btnCustomer" layoutX="19.0" layoutY="418.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_customer%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="Customer" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane fx:id="btnRoom" layoutX="19.0" layoutY="495.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_room%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="Room" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane fx:id="btnAbout" layoutX="19.0" layoutY="573.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/icons8_info%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="About" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane fx:id="btnExit" layoutX="20.0" layoutY="713.0" prefHeight="69.0" prefWidth="271.0" AnchorPane.bottomAnchor="20.0">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/vuesax/linear/logout.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="73.0" layoutY="17.0" prefHeight="35.0" prefWidth="173.0" styleClass="side_labels" text="Exit" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane layoutX="33.0" layoutY="799.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="101.0" />
+                  <Pane layoutX="26.0" layoutY="235.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" />
+                  <Circle fx:id="profileCircle" fill="DODGERBLUE" layoutX="149.0" layoutY="98.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="170.0" prefHeight="35.0" prefWidth="173.0" style="-fx-font-weight: bold;" styleClass="side_labels" text="VIP Hotel" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </left>
+         <center>
+            <AnchorPane prefHeight="929.0" prefWidth="1334.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="paneDashboard" prefHeight="929.0" prefWidth="1308.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label contentDisplay="CENTER" layoutX="46.0" layoutY="55.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="Welcome to Hotel Reservation!" textAlignment="CENTER" />
+                        <Label contentDisplay="CENTER" layoutX="46.0" layoutY="102.0" prefHeight="35.0" prefWidth="784.0" styleClass="side_labels" text="Use from awesome Hotel System for easy reservation management " textAlignment="CENTER" textFill="#7b7b7b" />
+                        <AnchorPane layoutX="46.0" layoutY="154.0" prefHeight="179.0" prefWidth="1309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="46.0" layoutY="24.0" prefHeight="135.0" prefWidth="387.0" style="-fx-background-color: #0455A7; -fx-background-radius: 24;">
+                                 <children>
+                                    <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #3677B9; -fx-background-radius: 100;">
+                                       <children>
+                                          <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@icons/reserve.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="24.0" prefHeight="35.0" prefWidth="195.0" styleClass="side_labels" text="Total Reservation" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="48.0" prefHeight="35.0" prefWidth="134.0" style="-fx-font-weight: bold; -fx-font-size: 50;" styleClass="side_labels" text="1000" textAlignment="CENTER" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="460.0" layoutY="24.0" prefHeight="135.0" prefWidth="392.0" style="-fx-background-color: DB5F00; -fx-background-radius: 24;">
+                                 <children>
+                                    <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: E27F33; -fx-background-radius: 100;">
+                                       <children>
+                                          <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@icons/icons8_customer%20fd1.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="24.0" prefHeight="35.0" prefWidth="195.0" styleClass="side_labels" text="Total Customer" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="48.0" prefHeight="35.0" prefWidth="134.0" style="-fx-font-weight: bold; -fx-font-size: 50;" styleClass="side_labels" text="1000" textAlignment="CENTER" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="881.0" layoutY="24.0" prefHeight="135.0" prefWidth="382.0" style="-fx-background-color: #009E53; -fx-background-radius: 24;">
+                                 <children>
+                                    <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #33B175; -fx-background-radius: 100;">
+                                       <children>
+                                          <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@icons/iconfds8_room%201.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="24.0" prefHeight="35.0" prefWidth="195.0" styleClass="side_labels" text="Total Rome" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label contentDisplay="CENTER" layoutX="143.0" layoutY="48.0" prefHeight="35.0" prefWidth="134.0" style="-fx-font-weight: bold; -fx-font-size: 50;" styleClass="side_labels" text="1000" textAlignment="CENTER" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneReserve" prefHeight="929.0" prefWidth="1311.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="31.0" layoutY="103.0" prefHeight="368.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+                           <children>
+                              <AnchorPane layoutX="29.0" layoutY="23.0" prefHeight="99.0" prefWidth="274.0" AnchorPane.leftAnchor="29.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Customer" />
+                                    <ComboBox layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Customer" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="940.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Day Duraction" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Duration" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="335.0" layoutY="22.0" prefHeight="99.0" prefWidth="279.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Room" />
+                                    <ComboBox layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Room" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="637.0" layoutY="22.0" prefHeight="99.0" prefWidth="244.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Reserve Date" />
+                                    <DatePicker layoutY="35.0" prefHeight="64.0" prefWidth="278.0" promptText="Select Date" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="30.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="30.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Price" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Price" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="336.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Total" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Total" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="636.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Payment" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Payment" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="940.0" layoutY="141.0" prefHeight="99.0" prefWidth="281.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Remine" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Remine" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Pane layoutX="30.0" layoutY="264.0" prefHeight="2.0" prefWidth="1187.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+                              <AnchorPane layoutX="878.0" layoutY="275.0" prefHeight="70.0" prefWidth="343.0" AnchorPane.rightAnchor="26.0">
+                                 <children>
+                                    <Button fx:id="btnSave" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Button>
+                                    <Button layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="31.0" layoutY="495.0" prefHeight="411.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="495.0">
+                           <children>
+                              <TableView layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
+                                <columns>
+                                  <TableColumn prefWidth="188.99996948242188" text="Customer" />
+                                  <TableColumn prefWidth="92.0" text="Room" />
+                                    <TableColumn prefWidth="138.0" text="Reserve Date" />
+                                    <TableColumn prefWidth="138.0" text="Duration" />
+                                    <TableColumn prefWidth="138.0" text="Price" />
+                                    <TableColumn prefWidth="138.0" text="Total" />
+                                    <TableColumn prefWidth="138.0" text="Payment" />
+                                    <TableColumn prefWidth="138.0" text="Remine" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Label contentDisplay="CENTER" layoutX="31.0" layoutY="40.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="New Room Reservation" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneCustomer" layoutX="10.0" layoutY="10.0" prefHeight="929.0" prefWidth="1311.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="31.0" layoutY="103.0" prefHeight="262.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+                           <children>
+                              <AnchorPane layoutX="940.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Phone" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Phone" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Pane layoutX="28.0" layoutY="151.0" prefHeight="2.0" prefWidth="1187.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0" />
+                              <AnchorPane layoutX="876.0" layoutY="164.0" prefHeight="70.0" prefWidth="343.0" AnchorPane.rightAnchor="28.0">
+                                 <children>
+                                    <Button fx:id="btnSave1" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="30.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Name *" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Name" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="637.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Address" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Address" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="331.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Father Name" />
+                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Father Name" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="31.0" layoutY="383.0" prefHeight="496.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="383.0">
+                           <children>
+                              <TableView layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
+                                 <columns>
+                                    <TableColumn prefWidth="188.99996948242188" text="Name" />
+                                    <TableColumn prefWidth="186.0" text="Father" />
+                                    <TableColumn prefWidth="383.0" text="Address" />
+                                    <TableColumn prefWidth="258.0" text="Phone" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Label contentDisplay="CENTER" layoutX="31.0" layoutY="40.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="+ Add New Customer" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
