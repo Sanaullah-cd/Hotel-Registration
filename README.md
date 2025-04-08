@@ -16,4 +16,3 @@ For run project, follow the bellow steps:
 
 Thank you.
 
-# Powered by: Sanaullah
