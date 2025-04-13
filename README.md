@@ -19,7 +19,7 @@ After completing all the setup steps, open the project in NetBeans, navigate to 
 
 📄 Documentation:
 
-Figma Design:(https://www.figma.com/design/dIjE7tBHziXTUDj8biicX9/Hotel-Registration?node-id=9-859&t=rB7HC5wuYDXmTTbi-0 )
+Figma Design:(https://www.figma.com/design/dIjE7tBHziXTUDj8biicX9/Hotel-Registration?node-id=0-1&p=f&t=uZ8ExS6QbckF96S8-0)
 
 UML Diagrams: (https://drive.google.com/drive/folders/17aZ1jpAMjcMcE3Ft-zTxi9-PAa-bgaX3?usp=drive_link)
 
