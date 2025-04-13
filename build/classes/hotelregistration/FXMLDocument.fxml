@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="1615.0" styleClass="dashboard" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelregistration.FXMLDocumentController">
    <children>
@@ -34,7 +35,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnReserve" layoutX="19.0" layoutY="342.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                  <Pane fx:id="btnReserve" layoutX="19.0" layoutY="342.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="navbar_s">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -257,18 +258,18 @@
                               <AnchorPane layoutX="940.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Phone" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Phone" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <TextField fx:id="txtCustomerPhone" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Phone" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                               <Pane layoutX="28.0" layoutY="151.0" prefHeight="2.0" prefWidth="1187.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0" />
                               <AnchorPane layoutX="876.0" layoutY="164.0" prefHeight="70.0" prefWidth="343.0" AnchorPane.rightAnchor="28.0">
                                  <children>
-                                    <Button fx:id="btnSave1" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
+                                    <Button fx:id="btnCustomerSave" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
+                                    <Button fx:id="btnCustomerNew" layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -278,36 +279,113 @@
                               <AnchorPane layoutX="30.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Name *" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Name" styleClass="input" />
+                                    <TextField fx:id="txtCustomerName" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Name" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="637.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Address" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Address" styleClass="input" />
+                                    <TextField fx:id="txtCustomerAddress" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Address" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="331.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Father Name" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Father Name" styleClass="input" />
+                                    <TextField fx:id="txtCustomerFName" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Father Name" styleClass="input" />
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="31.0" layoutY="383.0" prefHeight="496.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="383.0">
                            <children>
-                              <TableView layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
+                              <TableView fx:id="tblCustomer" layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
                                  <columns>
-                                    <TableColumn prefWidth="188.99996948242188" text="Name" />
-                                    <TableColumn prefWidth="186.0" text="Father" />
-                                    <TableColumn prefWidth="383.0" text="Address" />
-                                    <TableColumn prefWidth="258.0" text="Phone" />
+                                    <TableColumn fx:id="colCustomerName" prefWidth="188.99996948242188" text="Name" />
+                                    <TableColumn fx:id="colCustomerFName" prefWidth="186.0" text="Father Name" />
+                                    <TableColumn fx:id="colCustomerAddress" prefWidth="284.0" sortable="false" text="Address" />
+                                    <TableColumn fx:id="colCustomerPhone" prefWidth="229.0" sortable="false" text="Phone" />
+                                    <TableColumn fx:id="colCustomerCreatedAt" prefWidth="229.0" text="Created At" />
                                  </columns>
                               </TableView>
                            </children>
                         </AnchorPane>
                         <Label contentDisplay="CENTER" layoutX="31.0" layoutY="40.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="+ Add New Customer" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneRoom" layoutX="20.0" layoutY="20.0" prefHeight="929.0" prefWidth="1311.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="31.0" layoutY="103.0" prefHeight="262.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+                           <children>
+                              <Pane layoutX="28.0" layoutY="151.0" prefHeight="2.0" prefWidth="1187.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0" />
+                              <AnchorPane layoutX="876.0" layoutY="164.0" prefHeight="70.0" prefWidth="343.0" AnchorPane.rightAnchor="28.0">
+                                 <children>
+                                    <Button fx:id="btnRoomSave" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="btnRoomNew" layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="30.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Room No" />
+                                    <TextField fx:id="txtRoomNo" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Room No" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="934.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.rightAnchor="32.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Price" />
+                                    <TextField fx:id="txtRoomPrice" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Price" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="331.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Room Name" />
+                                    <TextField fx:id="txtRoomName" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Room Name" styleClass="input" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="635.0" layoutY="22.0" prefHeight="99.0" prefWidth="274.0">
+                                 <children>
+                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Category" />
+                                    <ComboBox fx:id="txtRoomCategory" layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Category" styleClass="input">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ComboBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="31.0" layoutY="383.0" prefHeight="496.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="383.0">
+                           <children>
+                              <TableView fx:id="tblRoom" layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
+                                 <columns>
+                                    <TableColumn fx:id="colRoomNo" prefWidth="170.0" text="Room No" />
+                                    <TableColumn fx:id="colRoomName" prefWidth="252.0" text="Room Name" />
+                                    <TableColumn fx:id="colRoomCategory" prefWidth="207.0" text="Category" />
+                                    <TableColumn fx:id="colRoomPrice" prefWidth="207.0" text="Price" />
+                                    <TableColumn fx:id="colRoomCreatedAt" prefWidth="207.0" text="Created At" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Label contentDisplay="CENTER" layoutX="31.0" layoutY="40.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="+ Add New Room" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneAbout" layoutX="30.0" layoutY="30.0" prefHeight="929.0" prefWidth="1311.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="31.0" layoutY="103.0" prefHeight="768.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="101.0">
+                           <children>
+                              <Text layoutX="61.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28; -fx-line-spacing: 10;" text="This project is a Hotel Reservation System developed as part of the Object-Oriented Programming course (CSE1273). The goal of this system is to allow users to search for available rooms, make reservations, cancel bookings, and manage customer information through a clean and organized interface.The project is designed and implemented following Object-Oriented Programming (OOP) principles such as encapsulation, inheritance, polymorphism, and abstraction. Throughout the development, we also applied design patterns and UML diagrams to better structure the system and visualize relationships between different classes." wrappingWidth="1079.3916015625" />
+                              <Label contentDisplay="CENTER" layoutX="61.0" layoutY="57.0" prefHeight="47.0" prefWidth="616.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="Hotel Reservation Registration System" textAlignment="CENTER" />
+                           </children>
+                        </AnchorPane>
+                        <Label contentDisplay="CENTER" layoutX="31.0" layoutY="40.0" prefHeight="47.0" prefWidth="507.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="About Us" textAlignment="CENTER" AnchorPane.topAnchor="40.0" />
                      </children>
                   </AnchorPane>
                </children>
