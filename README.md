@@ -14,5 +14,10 @@ For run project, follow the bellow steps:
 
 5- Run project and see aweasome ui with practical OOP lesssons.
 
-Thank you.
+The application is currently runnable via the terminal.
+After completing all the setup steps, open the project in NetBeans, navigate to the HotelRegistration package, and open the FXMLDocumentController.java file. Then run the application — you’ll see an awesome interface!
 
+📄 Documentation:
+Figma Design: Hotel Registration UI
+
+UML Diagrams: Google Drive Link
