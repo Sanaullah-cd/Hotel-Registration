@@ -2,6 +2,7 @@
 package hotelregistration;
 
 import hotelregistration.model.Customers;
+import hotelregistration.model.Reservation;
 import hotelregistration.model.Room;
 import java.net.URL;
 import java.util.Optional;
@@ -29,6 +30,7 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -41,17 +43,20 @@ public class FXMLDocumentController implements Initializable {
     ResultSet rs;
     
     @FXML
-    private Button btnSave, btnCustomerSave, btnCustomerNew, btnRoomSave, btnRoomNew;
+    private Button btnSave, btnCustomerSave, btnCustomerNew, btnRoomSave,btnRoomNew,btnResSave,btnResNew;
     
     @FXML
     private Circle profileCircle;
     
     @FXML
-    private TextField txtCustomerName, txtCustomerFName, txtCustomerAddress, txtCustomerPhone;
+    private TextField txtCustomerName, txtCustomerFName, txtCustomerAddress, txtCustomerPhone, txtResDuration,txtResPrice,txtResTotal,txtResPayments,txtResRemine;
     
     @FXML
-    private ComboBox<String> txtRoomCategory;
+    private ComboBox<String> txtRoomCategory,txtResCustomer,txtResRoom;
     
+    @FXML
+    private DatePicker txtResDate;
+            
     @FXML
     private TextField txtRoomNo, txtRoomName, txtRoomPrice;
     
@@ -66,7 +71,13 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private TableView<Room> tblRoom;
+    
+    @FXML
+    private TableView<Reservation> tblRes;
 
+    @FXML
+    private TableColumn<Reservation, String> colResCustomer,colResRoom,colResDate,colResDuration, colResPrice,colResTotal,colResPayment,colResRemine,colResCreated;
+    
     @FXML
     private TableColumn<Customers, String> colCustomerName, colCustomerFName, colCustomerAddress, colCustomerPhone, colCustomerCreatedAt;
     
@@ -76,6 +87,9 @@ public class FXMLDocumentController implements Initializable {
     ObservableList<Customers> customerList = FXCollections.observableArrayList();
     
     ObservableList<Room> roomList = FXCollections.observableArrayList();
+    
+    ObservableList<Reservation> reserveList = FXCollections.observableArrayList();
+
     
     void connect() throws ClassNotFoundException{
          try {
@@ -118,6 +132,9 @@ public class FXMLDocumentController implements Initializable {
     loadCustomerData();
     loadRoomColumns();
     loadRoomData();
+    loadCustomerRoom();
+    loadResColumns();
+    loadReserveData();
     
     btnExit.setOnMouseClicked(event -> {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -145,6 +162,8 @@ public class FXMLDocumentController implements Initializable {
           
       });
       btnReserve.setOnMouseClicked(event -> {
+          txtResCustomer.getItems().removeAll();
+          txtResRoom.getItems().removeAll();
           paneDashboard.setVisible(false);
           paneReserve.setVisible(true);
           paneCustomer.setVisible(false);
@@ -258,6 +277,40 @@ public class FXMLDocumentController implements Initializable {
       btnRoomNew.setOnAction(event -> {
           emptyRoomField();
       });
+      btnResSave.setOnAction(event -> {
+          String customer = txtResCustomer.getValue();
+          String room = txtResRoom.getValue();
+          String reserve_date = txtResDate.getValue().toString();
+          String day_duration = txtResDuration.getText();
+          String price = txtResPrice.getText();
+          String total = txtResTotal.getText();
+          String payment = txtResPayments.getText();
+          String remine = txtResRemine.getText();
+          LocalDate today = LocalDate.now();
+          if(customer.isEmpty()){
+              showAlertDialog("Please type a room no", "Required");
+              txtResCustomer.requestFocus();
+          }else{
+            try {
+              ps = con.prepareStatement("insert into reservation (customer,room,reserve_date,day_duration,price,total,payment,remine,created)values(?,?,?,?,?,?,?,?,?)");
+              ps.setString(1, customer);
+              ps.setString(2, room);
+              ps.setString(3, reserve_date);
+              ps.setString(4, day_duration);
+              ps.setString(5, price);
+              ps.setString(6, total);
+              ps.setString(7, payment);
+              ps.setString(8, remine);
+              ps.setString(9, today.toString());
+              ps.executeUpdate();
+              showAlertInfo("Successfully Saved", "Done Message");
+              emptyReserveField();
+              loadReserveData();
+            } catch (Exception e) {
+                showAlertDialog(e.getMessage().toString(), "Error");
+            }
+          }
+      });
       tblCustomer.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 Customers selectedCustomer= tblCustomer.getSelectionModel().getSelectedItem();
@@ -337,6 +390,14 @@ public class FXMLDocumentController implements Initializable {
                 txtRoomPrice.setText("");
                 txtRoomNo.requestFocus();
         }
+        void emptyReserveField(){
+                txtResDuration.setText("");
+                txtResPayments.setText("");
+                txtResPrice.setText("");
+                txtResTotal.setText("");
+                txtResRemine.setText("");
+                txtResCustomer.requestFocus();
+        }
         
         void loadCustomerData(){
             customerList.clear();
@@ -378,6 +439,30 @@ public class FXMLDocumentController implements Initializable {
             }
         }
         
+        void loadReserveData(){
+            reserveList.clear();
+            try {
+                ps = con.prepareStatement("select * from reservation order by created desc");
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    reserveList.add(new Reservation(
+                            rs.getString("customer"),
+                            rs.getString("room"),
+                            rs.getString("reserve_date"),
+                            rs.getInt("day_duration"),
+                            rs.getDouble("price"),
+                            rs.getDouble("total"),
+                            rs.getDouble("payment"),
+                            rs.getDouble("remine"),
+                            rs.getString("created")
+                    ));
+                    tblRes.setItems(reserveList);
+                }
+            } catch (Exception e) {
+                showAlertDialog(e.getMessage().toString(), "Database Error");
+            }
+        }
+        
         private void loadCustomerColumns(){
             colCustomerName.setCellValueFactory(new PropertyValueFactory<>("name"));
             colCustomerFName.setCellValueFactory(new PropertyValueFactory<>("fname"));
@@ -391,6 +476,38 @@ public class FXMLDocumentController implements Initializable {
             colRoomCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
             colRoomPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
             colRoomCreatedAt.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
+        }
+        private void loadResColumns(){
+            colResCustomer.setCellValueFactory(new PropertyValueFactory<>("customer"));
+            colResRoom.setCellValueFactory(new PropertyValueFactory<>("room_no"));
+            colResDate.setCellValueFactory(new PropertyValueFactory<>("reserved_date"));
+            colResDuration.setCellValueFactory(new PropertyValueFactory<>("day_duration"));
+            colResPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+            colResTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+            colResPayment.setCellValueFactory(new PropertyValueFactory<>("payment"));
+            colResRemine.setCellValueFactory(new PropertyValueFactory<>("remine"));
+            colResCreated.setCellValueFactory(new PropertyValueFactory<>("created"));
+        }
+        
+        void loadCustomerRoom(){
+            try {
+                ps = con.prepareStatement("select * from customer");
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    txtResCustomer.getItems().addAll(rs.getString(1));
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            try {
+                ps = con.prepareStatement("select * from room");
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    txtResRoom.getItems().addAll(rs.getString(1));
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
 
 }

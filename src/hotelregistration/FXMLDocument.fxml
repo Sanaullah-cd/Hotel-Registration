@@ -172,59 +172,59 @@
                               <AnchorPane layoutX="29.0" layoutY="23.0" prefHeight="99.0" prefWidth="274.0" AnchorPane.leftAnchor="29.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Customer" />
-                                    <ComboBox layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Customer" styleClass="input" />
+                                    <ComboBox fx:id="txtResCustomer" layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Customer" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="940.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Day Duraction" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Duration" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <TextField fx:id="txtResDuration" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Duration" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="335.0" layoutY="22.0" prefHeight="99.0" prefWidth="279.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Room" />
-                                    <ComboBox layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Room" styleClass="input" />
+                                    <ComboBox fx:id="txtResRoom" layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Room" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="637.0" layoutY="22.0" prefHeight="99.0" prefWidth="244.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Reserve Date" />
-                                    <DatePicker layoutY="35.0" prefHeight="64.0" prefWidth="278.0" promptText="Select Date" styleClass="input" />
+                                    <DatePicker fx:id="txtResDate" layoutY="35.0" prefHeight="64.0" prefWidth="278.0" promptText="Select Date" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="30.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.leftAnchor="30.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Price" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Price" styleClass="input" />
+                                    <TextField fx:id="txtResPrice" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Price" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="336.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Total" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Total" styleClass="input" />
+                                    <TextField fx:id="txtResTotal" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Total" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="636.0" layoutY="141.0" prefHeight="99.0" prefWidth="254.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Payment" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Payment" styleClass="input" />
+                                    <TextField fx:id="txtResPayments" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Payment" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="940.0" layoutY="141.0" prefHeight="99.0" prefWidth="281.0" AnchorPane.leftAnchor="940.0" AnchorPane.rightAnchor="26.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Remine" />
-                                    <TextField layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Remine" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <TextField fx:id="txtResRemine" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Remine" styleClass="input" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                               <Pane layoutX="30.0" layoutY="264.0" prefHeight="2.0" prefWidth="1187.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
                               <AnchorPane layoutX="878.0" layoutY="275.0" prefHeight="70.0" prefWidth="343.0" AnchorPane.rightAnchor="26.0">
                                  <children>
-                                    <Button fx:id="btnSave" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
+                                    <Button fx:id="btnResSave" layoutX="198.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" styleClass="mybutton" text="Save" textFill="WHITE">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor></Button>
-                                    <Button layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
+                                    <Button fx:id="btnResNew" layoutX="38.0" layoutY="13.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="145.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="label_bg" text="New Form" textFill="#0455a7">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor></Button>
@@ -234,16 +234,17 @@
                         </AnchorPane>
                         <AnchorPane layoutX="31.0" layoutY="495.0" prefHeight="411.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="495.0">
                            <children>
-                              <TableView layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
+                              <TableView fx:id="tblRes" layoutX="24.0" layoutY="28.0" prefHeight="444.0" prefWidth="1200.0" style="-fx-background-color: white;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="28.0">
                                 <columns>
-                                  <TableColumn prefWidth="188.99996948242188" text="Customer" />
-                                  <TableColumn prefWidth="92.0" text="Room" />
-                                    <TableColumn prefWidth="138.0" text="Reserve Date" />
-                                    <TableColumn prefWidth="138.0" text="Duration" />
-                                    <TableColumn prefWidth="138.0" text="Price" />
-                                    <TableColumn prefWidth="138.0" text="Total" />
-                                    <TableColumn prefWidth="138.0" text="Payment" />
-                                    <TableColumn prefWidth="138.0" text="Remine" />
+                                  <TableColumn fx:id="colResCustomer" prefWidth="188.99996948242188" text="Customer" />
+                                  <TableColumn fx:id="colResRoom" prefWidth="92.0" text="Room" />
+                                    <TableColumn fx:id="colResDate" prefWidth="138.0" text="Reserve Date" />
+                                    <TableColumn fx:id="colResDuration" prefWidth="138.0" text="Duration" />
+                                    <TableColumn fx:id="colResPrice" prefWidth="138.0" text="Price" />
+                                    <TableColumn fx:id="colResTotal" prefWidth="138.0" text="Total" />
+                                    <TableColumn fx:id="colResPayment" prefWidth="138.0" text="Payment" />
+                                    <TableColumn fx:id="colResRemine" prefWidth="138.0" text="Remine" />
+                                    <TableColumn fx:id="colResCreated" prefWidth="138.0" text="Created" />
                                 </columns>
                               </TableView>
                            </children>
