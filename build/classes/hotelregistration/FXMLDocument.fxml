@@ -16,13 +16,13 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="1615.0" styleClass="dashboard" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelregistration.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="902.0" prefWidth="1366.0" styleClass="dashboard" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelregistration.FXMLDocumentController">
    <children>
       <BorderPane prefHeight="929.0" prefWidth="1615.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <AnchorPane prefHeight="929.0" prefWidth="306.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="902.0" prefWidth="277.0" styleClass="sidebar" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="btnDashboard" layoutX="19.0" layoutY="262.0" prefHeight="69.0" prefWidth="271.0" styleClass="label_bg">
+                  <Pane fx:id="btnDashboard" layoutX="19.0" layoutY="262.0" prefHeight="69.0" prefWidth="249.0" styleClass="label_bg" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -35,7 +35,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnReserve" layoutX="19.0" layoutY="339.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="navbar_s">
+                  <Pane fx:id="btnReserve" layoutX="19.0" layoutY="339.0" prefHeight="69.0" prefWidth="249.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="navbar_s" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -48,7 +48,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnCustomer" layoutX="19.0" layoutY="415.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                  <Pane fx:id="btnCustomer" layoutX="19.0" layoutY="415.0" prefHeight="69.0" prefWidth="249.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,7 +61,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnRoom" layoutX="19.0" layoutY="492.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                  <Pane fx:id="btnRoom" layoutX="19.0" layoutY="492.0" prefHeight="69.0" prefWidth="249.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -74,7 +74,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnAbout" layoutX="19.0" layoutY="570.0" prefHeight="69.0" prefWidth="271.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;">
+                  <Pane fx:id="btnAbout" layoutX="19.0" layoutY="570.0" prefHeight="69.0" prefWidth="249.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -87,7 +87,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnExit" layoutX="20.0" layoutY="713.0" prefHeight="69.0" prefWidth="271.0" AnchorPane.bottomAnchor="20.0">
+                  <Pane fx:id="btnExit" layoutX="20.0" layoutY="713.0" prefHeight="69.0" prefWidth="249.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -100,10 +100,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane layoutX="33.0" layoutY="799.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="101.0" />
-                  <Pane layoutX="26.0" layoutY="235.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" />
-                  <Circle fx:id="profileCircle" fill="DODGERBLUE" layoutX="149.0" layoutY="98.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="170.0" prefHeight="35.0" prefWidth="173.0" style="-fx-font-weight: bold;" styleClass="side_labels" text="VIP Hotel" textAlignment="CENTER" />
+                  <Pane layoutX="33.0" layoutY="799.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Pane layoutX="26.0" layoutY="235.0" prefHeight="2.0" prefWidth="246.0" style="-fx-background-color: #eee;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Circle fx:id="profileCircle" fill="DODGERBLUE" layoutX="138.0" layoutY="99.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="79.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="171.0" prefHeight="35.0" prefWidth="173.0" style="-fx-font-weight: bold;" styleClass="side_labels" text="VIP Hotel" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </left>
@@ -116,7 +116,7 @@
                         <Label contentDisplay="CENTER" layoutX="46.0" layoutY="102.0" prefHeight="35.0" prefWidth="784.0" styleClass="side_labels" text="Use from awesome Hotel System for easy reservation management " textAlignment="CENTER" textFill="#7b7b7b" />
                         <AnchorPane layoutX="46.0" layoutY="154.0" prefHeight="179.0" prefWidth="1309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="46.0" layoutY="24.0" prefHeight="135.0" prefWidth="387.0" style="-fx-background-color: #0455A7; -fx-background-radius: 24;">
+                              <AnchorPane layoutX="46.0" layoutY="24.0" prefHeight="135.0" prefWidth="371.0" style="-fx-background-color: #0455A7; -fx-background-radius: 24;">
                                  <children>
                                     <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #3677B9; -fx-background-radius: 100;">
                                        <children>
@@ -131,7 +131,7 @@
                                     <Label contentDisplay="CENTER" layoutX="143.0" layoutY="48.0" prefHeight="35.0" prefWidth="134.0" style="-fx-font-weight: bold; -fx-font-size: 50;" styleClass="side_labels" text="1000" textAlignment="CENTER" textFill="WHITE" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="460.0" layoutY="24.0" prefHeight="135.0" prefWidth="392.0" style="-fx-background-color: DB5F00; -fx-background-radius: 24;">
+                              <AnchorPane layoutX="428.0" layoutY="24.0" prefHeight="135.0" prefWidth="364.0" style="-fx-background-color: DB5F00; -fx-background-radius: 24;">
                                  <children>
                                     <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: E27F33; -fx-background-radius: 100;">
                                        <children>
@@ -146,7 +146,7 @@
                                     <Label contentDisplay="CENTER" layoutX="143.0" layoutY="48.0" prefHeight="35.0" prefWidth="134.0" style="-fx-font-weight: bold; -fx-font-size: 50;" styleClass="side_labels" text="1000" textAlignment="CENTER" textFill="WHITE" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="881.0" layoutY="24.0" prefHeight="135.0" prefWidth="382.0" style="-fx-background-color: #009E53; -fx-background-radius: 24;">
+                              <AnchorPane layoutX="804.0" layoutY="22.0" prefHeight="135.0" prefWidth="360.0" style="-fx-background-color: #009E53; -fx-background-radius: 24;">
                                  <children>
                                     <AnchorPane layoutX="34.0" layoutY="23.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #33B175; -fx-background-radius: 100;">
                                        <children>
@@ -338,10 +338,10 @@
                                     <TextField fx:id="txtRoomNo" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Room No" styleClass="input" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="934.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0" AnchorPane.rightAnchor="32.0">
+                              <AnchorPane layoutX="934.0" layoutY="22.0" prefHeight="99.0" prefWidth="1.0" AnchorPane.rightAnchor="32.0">
                                  <children>
-                                    <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Price" />
-                                    <TextField fx:id="txtRoomPrice" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Price" styleClass="input" />
+                                    <Label layoutX="53.0" layoutY="-3.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Price" />
+                                    <TextField fx:id="txtRoomPrice" layoutX="53.0" layoutY="35.0" prefHeight="64.0" prefWidth="228.0" promptText="Enter Price" styleClass="input" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="331.0" layoutY="22.0" prefHeight="99.0" prefWidth="254.0">
@@ -350,10 +350,10 @@
                                     <TextField fx:id="txtRoomName" layoutY="35.0" prefHeight="64.0" prefWidth="281.0" promptText="Enter Room Name" styleClass="input" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="635.0" layoutY="22.0" prefHeight="99.0" prefWidth="274.0">
+                              <AnchorPane layoutX="635.0" layoutY="22.0" prefHeight="99.0" prefWidth="226.0">
                                  <children>
                                     <Label layoutX="4.0" prefHeight="35.0" prefWidth="155.0" style="-fx-font-size: 18;" text="Category" />
-                                    <ComboBox fx:id="txtRoomCategory" layoutY="35.0" prefHeight="64.0" prefWidth="282.0" promptText="Select Category" styleClass="input">
+                                    <ComboBox fx:id="txtRoomCategory" layoutY="35.0" prefHeight="64.0" prefWidth="221.0" promptText="Select Category" styleClass="input">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -382,7 +382,7 @@
                      <children>
                         <AnchorPane layoutX="31.0" layoutY="103.0" prefHeight="768.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 16;" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="101.0">
                            <children>
-                              <Text layoutX="61.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28; -fx-line-spacing: 10;" text="This project is a Hotel Reservation System developed as part of the Object-Oriented Programming course (CSE1273). The goal of this system is to allow users to search for available rooms, make reservations, cancel bookings, and manage customer information through a clean and organized interface.The project is designed and implemented following Object-Oriented Programming (OOP) principles such as encapsulation, inheritance, polymorphism, and abstraction. Throughout the development, we also applied design patterns and UML diagrams to better structure the system and visualize relationships between different classes." wrappingWidth="1079.3916015625" />
+                              <Text layoutX="64.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28; -fx-line-spacing: 10;" text="This project is a Hotel Reservation System developed as part of the Object-Oriented Programming course (CSE1273). The goal of this system is to allow users to search for available rooms, make reservations, cancel bookings, and manage customer information through a clean and organized interface.The project is designed and implemented following Object-Oriented Programming (OOP) principles such as encapsulation, inheritance, polymorphism, and abstraction. Throughout the development, we also applied design patterns and UML diagrams to better structure the system and visualize relationships between different classes." wrappingWidth="997.3916015625" />
                               <Label contentDisplay="CENTER" layoutX="61.0" layoutY="57.0" prefHeight="47.0" prefWidth="616.0" style="-fx-font-weight: bold; -fx-font-size: 32;" styleClass="side_labels" text="Hotel Reservation Registration System" textAlignment="CENTER" />
                            </children>
                         </AnchorPane>

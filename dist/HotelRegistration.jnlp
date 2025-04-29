@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="HotelRegistration.jar" size="157790" download="eager" />
+    <jar href="HotelRegistration.jar" size="157849" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="827921" download="eager" />
     <jar href="lib/sqlite-jdbc-3.7.2.jar" size="3201133" download="eager" />
   </resources>
