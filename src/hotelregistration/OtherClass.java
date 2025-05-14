@@ -1,5 +1,4 @@
 
-package OOExamples;
 
 // Abstraction
 abstract class Animal {
