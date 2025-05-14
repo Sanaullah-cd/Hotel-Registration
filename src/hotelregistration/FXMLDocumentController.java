@@ -311,6 +311,36 @@ public class FXMLDocumentController implements Initializable {
             }
           }
       });
+      tblRes.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Reservation selectedCustomer= tblRes.getSelectionModel().getSelectedItem();
+                if (selectedCustomer != null) {
+                    try {
+                        ps = con.prepareStatement("delete from reservation where customer = ?");
+                        ps.setString(1, selectedCustomer.getCustomer());
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        alert.setTitle("Delete Message");
+                        alert.setHeaderText("Delete?");
+                        alert.setContentText("Are you sure delete, item undone?");
+
+                        Optional<ButtonType> result = alert.showAndWait();
+
+                        if (result.isPresent() && result.get() == ButtonType.OK) {
+                           int r = ps.executeUpdate();
+                        
+                            if(r > 0){
+                                showAlertInfo("Successfully deleted.", "Done Message");
+                                loadReserveData();
+                            }else{
+                                showAlertInfo("No date", "Message");
+                            }
+                        }
+                    } catch (Exception e) {
+                        showAlertDialog(e.getMessage().toString(), "Database Error");
+                    }
+                }
+            }
+      });
       tblCustomer.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 Customers selectedCustomer= tblCustomer.getSelectionModel().getSelectedItem();
